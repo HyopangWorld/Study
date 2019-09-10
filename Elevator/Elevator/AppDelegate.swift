@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  ObserverTest
+//  Elevator
 //
-//  Created by 김효원 on 09/09/2019.
+//  Created by 김효원 on 10/09/2019.
 //  Copyright © 2019 HyowonKim. All rights reserved.
 //
 

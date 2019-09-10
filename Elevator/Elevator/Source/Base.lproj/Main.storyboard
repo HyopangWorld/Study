@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Elevator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="엘레베이터 순서" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0X2-Mr-ayX">
+                                <rect key="frame" x="158" y="144" width="107.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSz-ji-0xR">
+                                <rect key="frame" x="205.5" y="215" width="12.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CSz-ji-0xR" firstAttribute="centerX" secondItem="0X2-Mr-ayX" secondAttribute="centerX" id="1kj-4U-Q4B"/>
+                            <constraint firstItem="0X2-Mr-ayX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="9zg-6a-5Ur"/>
+                            <constraint firstItem="0X2-Mr-ayX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="158" id="e31-QY-G93"/>
+                            <constraint firstItem="CSz-ji-0xR" firstAttribute="top" secondItem="0X2-Mr-ayX" secondAttribute="bottom" constant="50" id="wuU-8E-d33"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="curPerson" destination="CSz-ji-0xR" id="lcL-6t-APw"/>
+                        <outlet property="elevatorView" destination="kpY-ec-fap" id="cFd-xk-VUP"/>
+                        <outlet property="personView" destination="emz-VM-jTx" id="sHA-Gy-r1Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kpY-ec-fap" userLabel="elevator">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="60"/>
+                    <color key="backgroundColor" red="0.92542304590000002" green="0.61565983410000003" blue="0.26606965989999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="hx7-xM-y6I"/>
+                        <constraint firstAttribute="height" constant="60" id="zTh-B3-ypd"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="e1E-bW-8GZ"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="emz-VM-jTx" userLabel="person">
+                    <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
+                    <color key="backgroundColor" red="0.2793771404" green="0.36445847599999998" blue="0.35389019690000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="15" id="daD-py-Qsg"/>
+                        <constraint firstAttribute="height" constant="15" id="tbP-57-B3Q"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="8fP-M3-TyD"/>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="18.75"/>
+        </scene>
+    </scenes>
+</document>
