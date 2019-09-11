@@ -31,42 +31,40 @@ class Elavator: Subject, Observer {
         }
         let floor = data as! Floor
         
+        if moveArray.count <= 0 {
+            moveArray.append(floor)
+            return
+        }
+        
         switch floor.state {
         case .up:
             for move in moveArray {
-                if move.id < floor.id {
-                    guard let index = moveArray.firstIndex(where: { $0.id == move.id }) else {
-                        return
-                    }
-                    
-                    if move.state == .down && moveArray.count - 1 < index {
-                        return
-                    }
-                    
-                    moveArray.insert(floor, at: index)
+                guard let index = moveArray.firstIndex(where: { $0.id == move.id }) else {
+                    return
+                }
+                
+                if move.state == .up && move.id > floor.id {
+                    moveArray.insert(floor, at: index + 1)
+                    return
+                }
+                
+                if move.state == .down && moveArray.count - 1 <= index  {
+                    moveArray.insert(floor, at: index + 1)
+                    return
                 }
             }
             
         case .down:
-            if moveArray.count <= 0 {
-                moveArray.append(floor)
-                return
-            }
-            
             for move in moveArray {
                 if move.id < floor.id {
                     guard let index = moveArray.firstIndex(where: { $0.id == move.id }) else {
                         return
                     }
                     moveArray.insert(floor, at: index)
+                    return
                 }
             }
         }
-        
-        for move in moveArray {
-            print(move.id)
-        }
-        print("---------")
     }
 }
 

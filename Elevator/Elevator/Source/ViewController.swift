@@ -27,8 +27,11 @@ class ViewController: UIViewController {
         }
         
         floor[2].state = .down
-        floor[5].state = .down
+        floor[5].state = .up
         floor[6].state = .down
+        floor[3].state = .down
+        floor[4].state = .up
+        floor[1].state = .down
     }
 }
 
