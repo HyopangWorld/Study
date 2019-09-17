@@ -12,7 +12,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MVCViewController" customModule="Patterns" customModuleProvider="target">
             <connections>
-                <outlet property="button" destination="LYT-99-Eu1" id="iRW-c0-xlV"/>
                 <outlet property="label" destination="T3i-8P-s6f" id="3Qd-92-CNb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="f25-Hj-5cq"/>
             </connections>
@@ -28,11 +27,27 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LYT-99-Eu1">
-                    <rect key="frame" x="196" y="307" width="22" height="22"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWm-Gj-MX5" userLabel="hyowon">
+                    <rect key="frame" x="80" y="333" width="22" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="tintColor" red="0.92542304590000002" green="0.61565983410000003" blue="0.26606965989999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="didTapHyowon:" destination="-1" eventType="touchUpInside" id="NAA-VN-Vbz"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0L-M0-mQZ" userLabel="jeongwon">
+                    <rect key="frame" x="196" y="333" width="22" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="tintColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <action selector="didTapJeongwon:" destination="-1" eventType="touchUpInside" id="4Kl-5A-zE9"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J6f-fN-vWA" userLabel="seongyun">
+                    <rect key="frame" x="308" y="333" width="22" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <connections>
-                        <action selector="didTapButton:" destination="-1" eventType="touchUpInside" id="ggE-Xq-goS"/>
+                        <action selector="didTapSeongyun:" destination="-1" eventType="touchUpInside" id="VvI-B4-ehN"/>
                     </connections>
                 </button>
             </subviews>

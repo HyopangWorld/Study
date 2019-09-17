@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		240160B72330AC2900539616 /* MVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240160B52330AC2900539616 /* MVCViewController.swift */; };
 		240160B82330AC2900539616 /* MVCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 240160B62330AC2900539616 /* MVCViewController.xib */; };
+		240160BD2330B24A00539616 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240160BC2330B24A00539616 /* Presenter.swift */; };
+		240160C02330B26100539616 /* MVPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240160BE2330B26100539616 /* MVPViewController.swift */; };
+		240160C12330B26100539616 /* MVPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 240160BF2330B26100539616 /* MVPViewController.xib */; };
 		24D2A2512330A0B200364E3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D2A2502330A0B200364E3E /* AppDelegate.swift */; };
 		24D2A2532330A0B200364E3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D2A2522330A0B200364E3E /* ViewController.swift */; };
 		24D2A2582330A0B300364E3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24D2A2572330A0B300364E3E /* Assets.xcassets */; };
 		24D2A25B2330A0B300364E3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24D2A2592330A0B300364E3E /* LaunchScreen.storyboard */; };
 		24D2A2662330A0B300364E3E /* PatternsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D2A2652330A0B300364E3E /* PatternsTests.swift */; };
 		24D2A2712330A0B300364E3E /* PatternsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D2A2702330A0B300364E3E /* PatternsUITests.swift */; };
-		24D2A2802330A0CE00364E3E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D2A27F2330A0CE00364E3E /* Model.swift */; };
+		24D2A2802330A0CE00364E3E /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D2A27F2330A0CE00364E3E /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 /* Begin PBXFileReference section */
 		240160B52330AC2900539616 /* MVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCViewController.swift; sourceTree = "<group>"; };
 		240160B62330AC2900539616 /* MVCViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MVCViewController.xib; sourceTree = "<group>"; };
+		240160BC2330B24A00539616 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		240160BE2330B26100539616 /* MVPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPViewController.swift; sourceTree = "<group>"; };
+		240160BF2330B26100539616 /* MVPViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MVPViewController.xib; sourceTree = "<group>"; };
 		24D2A24D2330A0B200364E3E /* Patterns.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Patterns.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24D2A2502330A0B200364E3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24D2A2522330A0B200364E3E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +56,7 @@
 		24D2A26C2330A0B300364E3E /* PatternsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PatternsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24D2A2702330A0B300364E3E /* PatternsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternsUITests.swift; sourceTree = "<group>"; };
 		24D2A2722330A0B300364E3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		24D2A27F2330A0CE00364E3E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		24D2A27F2330A0CE00364E3E /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		240160B92330B1FA00539616 /* MVP */ = {
+			isa = PBXGroup;
+			children = (
+				240160BC2330B24A00539616 /* Presenter.swift */,
+				240160BE2330B26100539616 /* MVPViewController.swift */,
+				240160BF2330B26100539616 /* MVPViewController.xib */,
+			);
+			path = MVP;
+			sourceTree = "<group>";
+		};
+		240160C22330B2D400539616 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				24D2A27F2330A0CE00364E3E /* Person.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		24D2A2442330A0B200364E3E = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +125,8 @@
 		24D2A24F2330A0B200364E3E /* Patterns */ = {
 			isa = PBXGroup;
 			children = (
+				240160C22330B2D400539616 /* Model */,
+				240160B92330B1FA00539616 /* MVP */,
 				24D2A27E2330A0BE00364E3E /* MVC */,
 				24D2A2502330A0B200364E3E /* AppDelegate.swift */,
 				24D2A2522330A0B200364E3E /* ViewController.swift */,
@@ -132,7 +158,6 @@
 		24D2A27E2330A0BE00364E3E /* MVC */ = {
 			isa = PBXGroup;
 			children = (
-				24D2A27F2330A0CE00364E3E /* Model.swift */,
 				240160B52330AC2900539616 /* MVCViewController.swift */,
 				240160B62330AC2900539616 /* MVCViewController.xib */,
 			);
@@ -243,6 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				240160C12330B26100539616 /* MVPViewController.xib in Resources */,
 				24D2A25B2330A0B300364E3E /* LaunchScreen.storyboard in Resources */,
 				24D2A2582330A0B300364E3E /* Assets.xcassets in Resources */,
 				240160B82330AC2900539616 /* MVCViewController.xib in Resources */,
@@ -270,10 +296,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24D2A2802330A0CE00364E3E /* Model.swift in Sources */,
+				24D2A2802330A0CE00364E3E /* Person.swift in Sources */,
 				24D2A2532330A0B200364E3E /* ViewController.swift in Sources */,
+				240160C02330B26100539616 /* MVPViewController.swift in Sources */,
 				24D2A2512330A0B200364E3E /* AppDelegate.swift in Sources */,
 				240160B72330AC2900539616 /* MVCViewController.swift in Sources */,
+				240160BD2330B24A00539616 /* Presenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
