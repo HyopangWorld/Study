@@ -43,12 +43,13 @@ class Elavator: Subject, Observer {
                     return
                 }
                 
-                if move.state == .up && move.id > floor.id {
-                    moveArray.insert(floor, at: index + 1)
-                    return
-                }
-                
-                if move.state == .down && moveArray.count - 1 <= index  {
+                if (move.state == .up && move.id > floor.id)
+                    || (move.state == .down && moveArray.count - 1 <= index) {
+                    
+                    if moveArray.count - 1 == index {
+                        moveArray.append(floor)
+                        return
+                    }
                     moveArray.insert(floor, at: index + 1)
                     return
                 }
@@ -58,6 +59,11 @@ class Elavator: Subject, Observer {
             for move in moveArray {
                 if move.id < floor.id {
                     guard let index = moveArray.firstIndex(where: { $0.id == move.id }) else {
+                        return
+                    }
+                    
+                    if moveArray.count - 1 == index {
+                        moveArray.append(floor)
                         return
                     }
                     moveArray.insert(floor, at: index)
