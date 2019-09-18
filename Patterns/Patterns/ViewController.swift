@@ -13,25 +13,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        // MARK: - MVC
-//        let vc = MVCViewController()
-//        present(vc, animated: true, completion: nil)
+        // MVC
+        let mvc = MVCViewController()
         
-        // MARK: - MVP
-//        let vc = MVPViewController()
-//        let presenter = MVPPresenter(service: SayHiService())
-//        vc.presenter = presenter
-//
-//        present(vc, animated: true, completion: nil)
+        // MVP
+        let mvp = MVPViewController()
+        let presenter = MVPPresenter(service: SayHiService())
+        mvp.presenter = presenter
         
-        
-         // MARK: - MVP
-        let vc = MVVMViewController()
+        // MVVM
+        let mvvvm = MVVMViewController()
         let model = Person(age: 20, name: "김효원")
         let viewModel = ViewModel(person: model)
-        vc.viewModel = viewModel
+        mvvvm.viewModel = viewModel
         
-        present(vc, animated: true, completion: nil)
+        present(mvvvm, animated: true, completion: nil)
     }
 }
 
