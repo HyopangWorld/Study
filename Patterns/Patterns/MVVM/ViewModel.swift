@@ -16,7 +16,7 @@ protocol ViewModelProtocol: class {
 }
 
 class ViewModel: ViewModelProtocol {
-    let person: Person
+    var person: Person
     var hi: String? {
         didSet {
             self.hiDidChange?(self)

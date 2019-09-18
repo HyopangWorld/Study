@@ -24,14 +24,17 @@ class MVVMViewController: UIViewController {
     }
     
     @IBAction func seongyunButtonDidTap(_ sender: Any) {
+        viewModel.person = Person(age: 17, name: "김승연")
         viewModel.sayHi()
     }
     
     @IBAction func jeongwonButtonDidTap(_ sender: Any) {
+        viewModel.person = Person(age: 23, name: "김정원")
         viewModel.sayHi()
     }
     
     @IBAction func hyowonButtonDidTap(_ sender: Any) {
+        viewModel.person = Person(age: 20, name: "김효원")
         viewModel.sayHi()
         
     }
