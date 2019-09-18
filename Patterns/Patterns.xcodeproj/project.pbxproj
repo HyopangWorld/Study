@@ -12,6 +12,9 @@
 		240160BD2330B24A00539616 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240160BC2330B24A00539616 /* Presenter.swift */; };
 		240160C02330B26100539616 /* MVPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240160BE2330B26100539616 /* MVPViewController.swift */; };
 		240160C12330B26100539616 /* MVPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 240160BF2330B26100539616 /* MVPViewController.xib */; };
+		24345FB52331F02E0094117D /* MVVMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24345FB32331F02E0094117D /* MVVMViewController.swift */; };
+		24345FB62331F02E0094117D /* MVVMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24345FB42331F02E0094117D /* MVVMViewController.xib */; };
+		24345FB82331F0400094117D /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24345FB72331F0400094117D /* ViewModel.swift */; };
 		24D2A2512330A0B200364E3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D2A2502330A0B200364E3E /* AppDelegate.swift */; };
 		24D2A2532330A0B200364E3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D2A2522330A0B200364E3E /* ViewController.swift */; };
 		24D2A2582330A0B300364E3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24D2A2572330A0B300364E3E /* Assets.xcassets */; };
@@ -44,6 +47,9 @@
 		240160BC2330B24A00539616 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		240160BE2330B26100539616 /* MVPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPViewController.swift; sourceTree = "<group>"; };
 		240160BF2330B26100539616 /* MVPViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MVPViewController.xib; sourceTree = "<group>"; };
+		24345FB32331F02E0094117D /* MVVMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMViewController.swift; sourceTree = "<group>"; };
+		24345FB42331F02E0094117D /* MVVMViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MVVMViewController.xib; sourceTree = "<group>"; };
+		24345FB72331F0400094117D /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		24D2A24D2330A0B200364E3E /* Patterns.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Patterns.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24D2A2502330A0B200364E3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24D2A2522330A0B200364E3E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +108,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		24345FB22331ED740094117D /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				24345FB72331F0400094117D /* ViewModel.swift */,
+				24345FB32331F02E0094117D /* MVVMViewController.swift */,
+				24345FB42331F02E0094117D /* MVVMViewController.xib */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
 		24D2A2442330A0B200364E3E = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				240160C22330B2D400539616 /* Model */,
+				24345FB22331ED740094117D /* MVVM */,
 				240160B92330B1FA00539616 /* MVP */,
 				24D2A27E2330A0BE00364E3E /* MVC */,
 				24D2A2502330A0B200364E3E /* AppDelegate.swift */,
@@ -268,6 +285,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24345FB62331F02E0094117D /* MVVMViewController.xib in Resources */,
 				240160C12330B26100539616 /* MVPViewController.xib in Resources */,
 				24D2A25B2330A0B300364E3E /* LaunchScreen.storyboard in Resources */,
 				24D2A2582330A0B300364E3E /* Assets.xcassets in Resources */,
@@ -298,9 +316,11 @@
 			files = (
 				24D2A2802330A0CE00364E3E /* Person.swift in Sources */,
 				24D2A2532330A0B200364E3E /* ViewController.swift in Sources */,
+				24345FB52331F02E0094117D /* MVVMViewController.swift in Sources */,
 				240160C02330B26100539616 /* MVPViewController.swift in Sources */,
 				24D2A2512330A0B200364E3E /* AppDelegate.swift in Sources */,
 				240160B72330AC2900539616 /* MVCViewController.swift in Sources */,
+				24345FB82331F0400094117D /* ViewModel.swift in Sources */,
 				240160BD2330B24A00539616 /* Presenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
