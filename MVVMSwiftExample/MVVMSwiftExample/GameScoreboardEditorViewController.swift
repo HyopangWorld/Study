@@ -26,14 +26,16 @@ class GameScoreboardEditorViewController: UIViewController {
     
     @IBOutlet weak var scoreLabel: UILabel!
     
-    var viewModel: GameScoreboardEditorViewModel? {
-        didSet {
+    var viewModel: GameScoreboardEditorViewModelFromGame? {
+        didSet{
             fillUI()
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel?.delegate = self
         
         styleUI()
         fillUI()
@@ -82,4 +84,10 @@ class GameScoreboardEditorViewController: UIViewController {
         awayPlayer3View.viewModel = viewModel.awayPlayers[2]
     }
 
+}
+
+extension GameScoreboardEditorViewController: GameScoreboardEditorViewModelDelegate {
+    func updateUI() {
+        fillUI()
+    }
 }

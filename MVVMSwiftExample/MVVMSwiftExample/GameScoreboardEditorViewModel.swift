@@ -21,3 +21,8 @@ protocol GameScoreboardEditorViewModel {
     var homePlayers: [PlayerScoreboardMoveEditorViewModel] { get }
     var awayPlayers: [PlayerScoreboardMoveEditorViewModel] { get }
 }
+
+
+protocol GameScoreboardEditorViewModelDelegate {
+    func updateUI()
+}

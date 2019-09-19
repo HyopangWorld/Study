@@ -10,6 +10,7 @@ import Foundation
 
 class GameScoreboardEditorViewModelFromGame: NSObject, GameScoreboardEditorViewModel {
     let game: Game
+    var delegate: GameScoreboardEditorViewModelDelegate?
     
     struct Formatter {
         static let durationFormatter: DateComponentsFormatter = {
@@ -21,14 +22,38 @@ class GameScoreboardEditorViewModelFromGame: NSObject, GameScoreboardEditorViewM
     
     // MARK: - GameScoreboardEditorViewModel protocol
     
-    var homeTeam: String
-    var awayTeam: String
+    var homeTeam: String {
+        didSet{
+            delegate?.updateUI()
+        }
+    }
+    var awayTeam: String {
+        didSet{
+            delegate?.updateUI()
+        }
+    }
     
-    var time: String
-    var score: String
-    var isFinished: Bool
+    var time: String {
+        didSet{
+            delegate?.updateUI()
+        }
+    }
+    var score: String {
+        didSet{
+            delegate?.updateUI()
+        }
+    }
+    var isFinished: Bool {
+        didSet{
+            delegate?.updateUI()
+        }
+    }
     
-    var isPaused: Bool
+    var isPaused: Bool {
+        didSet{
+            delegate?.updateUI()
+        }
+    }
     
     func togglePause() {
         if isPaused {
@@ -36,7 +61,6 @@ class GameScoreboardEditorViewModelFromGame: NSObject, GameScoreboardEditorViewM
         } else {
             pauseTimer()
         }
-        
         self.isPaused = !isPaused
     }
     
