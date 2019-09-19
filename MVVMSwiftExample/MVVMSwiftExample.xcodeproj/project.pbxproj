@@ -27,6 +27,8 @@
 		11BCCCEA1D97CABA008DB25F /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BCCCE11D97CABA008DB25F /* Team.swift */; };
 		11BCCCEB1D97CABA008DB25F /* UIStoryboard+Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BCCCE21D97CABA008DB25F /* UIStoryboard+Loader.swift */; };
 		11E21EAF1DA4106400380E3C /* NSTimer+Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E21EAE1DA4106400380E3C /* NSTimer+Closure.swift */; };
+		246B4A5423334C9C00F8338B /* GameScoreboardEditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246B4A5323334C9C00F8338B /* GameScoreboardEditorViewModel.swift */; };
+		246B4A5623334D1F00F8338B /* GameScoreboardEditorViewModelFromGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246B4A5523334D1F00F8338B /* GameScoreboardEditorViewModelFromGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		11BCCCE11D97CABA008DB25F /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		11BCCCE21D97CABA008DB25F /* UIStoryboard+Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Loader.swift"; sourceTree = "<group>"; };
 		11E21EAE1DA4106400380E3C /* NSTimer+Closure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTimer+Closure.swift"; sourceTree = "<group>"; };
+		246B4A5323334C9C00F8338B /* GameScoreboardEditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScoreboardEditorViewModel.swift; sourceTree = "<group>"; };
+		246B4A5523334D1F00F8338B /* GameScoreboardEditorViewModelFromGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScoreboardEditorViewModelFromGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +212,8 @@
 		11F768761D99050600F159D2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				246B4A5323334C9C00F8338B /* GameScoreboardEditorViewModel.swift */,
+				246B4A5523334D1F00F8338B /* GameScoreboardEditorViewModelFromGame.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -362,6 +368,8 @@
 				11BCCCE41D97CABA008DB25F /* Game.swift in Sources */,
 				118C387A1D99C1E70006396D /* UIViewController+Subview.swift in Sources */,
 				11615D0D1D97F5C600A007D2 /* GameScoreboardEditorViewController.swift in Sources */,
+				246B4A5423334C9C00F8338B /* GameScoreboardEditorViewModel.swift in Sources */,
+				246B4A5623334D1F00F8338B /* GameScoreboardEditorViewModelFromGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
