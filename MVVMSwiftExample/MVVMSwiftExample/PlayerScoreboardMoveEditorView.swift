@@ -25,7 +25,7 @@ class PlayerScoreboardMoveEditorView: UIView {
     
     fileprivate weak var playerNibView: UIView!
     
-    var viewModel: PlayerScoreboardMoveEditorViewModel? {
+    var viewModel: PlayerScoreboardMoveEditorViewModelFromPlayer? {
         didSet{
             fillUI()
         }
@@ -33,6 +33,8 @@ class PlayerScoreboardMoveEditorView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
+        viewModel?.delegate = self
         
         let playerView: UIView = UINib.loadPlayerScoreboardMoveEditorView(self)
         self.addSubview(playerView)
@@ -107,4 +109,10 @@ class PlayerScoreboardMoveEditorView: UIView {
         self.foulCountLabel.text = viewModel.foulMoveCount
     }
     
+}
+
+extension PlayerScoreboardMoveEditorView: PlayerScoreboardMoveEditorViewModelDelegate {
+    func updateUI() {
+        fillUI()
+    }
 }

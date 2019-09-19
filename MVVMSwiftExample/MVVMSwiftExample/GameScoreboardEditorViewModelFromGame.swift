@@ -64,8 +64,8 @@ class GameScoreboardEditorViewModelFromGame: NSObject, GameScoreboardEditorViewM
         self.isPaused = !isPaused
     }
     
-    var homePlayers: [PlayerScoreboardMoveEditorViewModel]
-    var awayPlayers: [PlayerScoreboardMoveEditorViewModel]
+    var homePlayers: [PlayerScoreboardMoveEditorViewModelFromPlayer]
+    var awayPlayers: [PlayerScoreboardMoveEditorViewModelFromPlayer]
     
     init(withGame game: Game) {
         self.game = game
@@ -84,8 +84,8 @@ class GameScoreboardEditorViewModelFromGame: NSObject, GameScoreboardEditorViewM
     
     // MARK: Private
     
-    fileprivate static func playerViewModels(from players: [Player], game: Game) -> [PlayerScoreboardMoveEditorViewModel] {
-        var playerViewModels: [PlayerScoreboardMoveEditorViewModel] = [PlayerScoreboardMoveEditorViewModel]()
+    fileprivate static func playerViewModels(from players: [Player], game: Game) -> [PlayerScoreboardMoveEditorViewModelFromPlayer] {
+        var playerViewModels: [PlayerScoreboardMoveEditorViewModelFromPlayer] = [PlayerScoreboardMoveEditorViewModelFromPlayer]()
         for player in players {
             playerViewModels.append(PlayerScoreboardMoveEditorViewModelFromPlayer(withGame: game, player: player))
         }

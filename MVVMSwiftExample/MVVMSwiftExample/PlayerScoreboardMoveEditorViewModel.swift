@@ -23,3 +23,7 @@ protocol PlayerScoreboardMoveEditorViewModel {
     func reboundMove()
     func foulMove()
 }
+
+protocol PlayerScoreboardMoveEditorViewModelDelegate {
+    func updateUI()
+}

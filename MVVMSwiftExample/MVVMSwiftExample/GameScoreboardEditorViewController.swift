@@ -34,7 +34,6 @@ class GameScoreboardEditorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         viewModel?.delegate = self
         
         styleUI()
