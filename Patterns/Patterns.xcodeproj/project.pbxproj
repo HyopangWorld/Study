@@ -16,6 +16,10 @@
 		24345FB62331F02E0094117D /* MVVMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24345FB42331F02E0094117D /* MVVMViewController.xib */; };
 		24345FB82331F0400094117D /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24345FB72331F0400094117D /* ViewModel.swift */; };
 		24345FBA233228D40094117D /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24345FB9233228D40094117D /* Service.swift */; };
+		249DB0242338B3440090DC8E /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249DB0232338B3440090DC8E /* Slider.swift */; };
+		249DB0272338B3570090DC8E /* SliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249DB0252338B3570090DC8E /* SliderViewController.swift */; };
+		249DB0282338B3570090DC8E /* SliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 249DB0262338B3570090DC8E /* SliderViewController.xib */; };
+		249DB02A2338B3680090DC8E /* SliderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249DB0292338B3680090DC8E /* SliderViewModel.swift */; };
 		24D2A2512330A0B200364E3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D2A2502330A0B200364E3E /* AppDelegate.swift */; };
 		24D2A2532330A0B200364E3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D2A2522330A0B200364E3E /* ViewController.swift */; };
 		24D2A2582330A0B300364E3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24D2A2572330A0B300364E3E /* Assets.xcassets */; };
@@ -52,6 +56,10 @@
 		24345FB42331F02E0094117D /* MVVMViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MVVMViewController.xib; sourceTree = "<group>"; };
 		24345FB72331F0400094117D /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		24345FB9233228D40094117D /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		249DB0232338B3440090DC8E /* Slider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
+		249DB0252338B3570090DC8E /* SliderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderViewController.swift; sourceTree = "<group>"; };
+		249DB0262338B3570090DC8E /* SliderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderViewController.xib; sourceTree = "<group>"; };
+		249DB0292338B3680090DC8E /* SliderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderViewModel.swift; sourceTree = "<group>"; };
 		24D2A24D2330A0B200364E3E /* Patterns.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Patterns.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24D2A2502330A0B200364E3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24D2A2522330A0B200364E3E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +136,17 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		249DB0222338B31D0090DC8E /* MVVMSlider */ = {
+			isa = PBXGroup;
+			children = (
+				249DB0232338B3440090DC8E /* Slider.swift */,
+				249DB0292338B3680090DC8E /* SliderViewModel.swift */,
+				249DB0252338B3570090DC8E /* SliderViewController.swift */,
+				249DB0262338B3570090DC8E /* SliderViewController.xib */,
+			);
+			path = MVVMSlider;
+			sourceTree = "<group>";
+		};
 		24D2A2442330A0B200364E3E = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +170,7 @@
 		24D2A24F2330A0B200364E3E /* Patterns */ = {
 			isa = PBXGroup;
 			children = (
+				249DB0222338B31D0090DC8E /* MVVMSlider */,
 				24345FBB233228EB0094117D /* Service */,
 				240160C22330B2D400539616 /* Model */,
 				24345FB22331ED740094117D /* MVVM */,
@@ -301,6 +321,7 @@
 				24D2A25B2330A0B300364E3E /* LaunchScreen.storyboard in Resources */,
 				24D2A2582330A0B300364E3E /* Assets.xcassets in Resources */,
 				240160B82330AC2900539616 /* MVCViewController.xib in Resources */,
+				249DB0282338B3570090DC8E /* SliderViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,7 +351,10 @@
 				24345FB52331F02E0094117D /* MVVMViewController.swift in Sources */,
 				240160C02330B26100539616 /* MVPViewController.swift in Sources */,
 				24D2A2512330A0B200364E3E /* AppDelegate.swift in Sources */,
+				249DB0242338B3440090DC8E /* Slider.swift in Sources */,
 				24345FBA233228D40094117D /* Service.swift in Sources */,
+				249DB02A2338B3680090DC8E /* SliderViewModel.swift in Sources */,
+				249DB0272338B3570090DC8E /* SliderViewController.swift in Sources */,
 				240160B72330AC2900539616 /* MVCViewController.swift in Sources */,
 				24345FB82331F0400094117D /* ViewModel.swift in Sources */,
 				240160BD2330B24A00539616 /* Presenter.swift in Sources */,

@@ -27,7 +27,10 @@ class ViewController: UIViewController {
         let viewModel = ViewModel(person: model)
         mvvvm.viewModel = viewModel
         
-        present(mvvvm, animated: true, completion: nil)
+        let slider = SliderViewController()
+        slider.viewModel = SliderViewModel(slider: Slider(number: 10))
+        
+        present(slider, animated: true, completion: nil)
     }
 }
 
