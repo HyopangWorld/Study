@@ -8,10 +8,10 @@
 
 import Foundation
 
-class Slider {
-    var number: Float
+struct Slider {
+    var number: Int
     
-    init(number: Float) {
+    init(number: Int) {
         self.number = number
     }
 }

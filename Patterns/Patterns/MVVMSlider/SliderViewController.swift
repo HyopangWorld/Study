@@ -14,8 +14,11 @@ class SliderViewController: UIViewController {
     
     var viewModel: SliderViewModel! {
         didSet {
-            self.viewModel.numberDidChange = {[unowned self] viewModel in
+            self.viewModel.sliderDidChange = {[unowned self] viewModel in
                 self.numberTextField.text = viewModel.number
+            }
+            self.viewModel.textFieldDidChange = {[unowned self] viewModel in
+                self.slider.value = viewModel.value!
             }
         }
     }
@@ -26,7 +29,38 @@ class SliderViewController: UIViewController {
 
     
     @IBAction func sliderDidValueChange(_ sender: UISlider) {
-        viewModel.showNumber(number: sender.value)
+        viewModel.showNumber(number: Int(sender.value))
     }
     
+    @IBAction func numberTextFieldDidEditEnd(_ sender: UITextField) {
+        if !checkValidation(sender.text) {
+            sender.text = "0"
+        }
+        
+        viewModel.showSlider(value: (sender.text! as NSString).integerValue)
+    }
+    
+}
+
+extension SliderViewController {
+    
+    func checkValidation(_ text: String?) -> Bool {
+        guard let text = text else {
+            return false
+        }
+        
+        if text.isEmpty || text.rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) != nil {
+            return false
+        }
+        
+        if !((text as NSString).floatValue <= slider.maximumValue) {
+            return false
+        }
+        
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
