@@ -12,12 +12,15 @@ class SliderViewController: UIViewController {
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var numberTextField: UITextField!
     
-    var viewModel: SliderViewModel! {
+    var viewModel: SliderViewModel? {
         didSet {
-            self.viewModel.sliderDidChange = {[unowned self] viewModel in
+            guard let viewModel = viewModel else {
+                return
+            }
+            viewModel.sliderDidChange = {[unowned self] viewModel in
                 self.numberTextField.text = viewModel.number
             }
-            self.viewModel.textFieldDidChange = {[unowned self] viewModel in
+            viewModel.textFieldDidChange = {[unowned self] viewModel in
                 self.slider.value = viewModel.value!
             }
         }
@@ -29,7 +32,7 @@ class SliderViewController: UIViewController {
 
     
     @IBAction func sliderDidValueChange(_ sender: UISlider) {
-        viewModel.showNumber(number: Int(sender.value))
+        viewModel?.showNumber(number: Int(sender.value))
     }
     
     @IBAction func numberTextFieldDidEditEnd(_ sender: UITextField) {
@@ -37,7 +40,7 @@ class SliderViewController: UIViewController {
             sender.text = "0"
         }
         
-        viewModel.showSlider(value: (sender.text! as NSString).integerValue)
+        viewModel?.showSlider(value: (sender.text! as NSString).integerValue)
     }
     
 }
