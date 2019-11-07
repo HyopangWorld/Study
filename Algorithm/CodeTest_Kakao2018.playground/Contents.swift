@@ -1,144 +1,202 @@
 import Foundation
+//
+///*비밀지도*/
+//
+//func solution(_ n: Int, _ arr1: [Int], _ arr2: [Int]) -> [String] {
+//    var answer: [String] = []
+//
+//    for i in 0 ..< n {
+//        var val = String((arr1[i] | arr2[i]), radix: 2)
+//
+//        val = val.replacingOccurrences(of: "0", with: " ", options: .literal, range: nil)
+//        val = val.replacingOccurrences(of: "1", with: "#", options: .literal, range: nil)
+//
+//        for _ in 0 ..< (n - val.count) {
+//            val = " " + val
+//        }
+//
+//        answer.append(val)
+//    }
+//
+//    return answer
+//}
+//
+//print("\(solution(5, [9, 20, 28, 18, 11], [30, 1, 21, 17, 28]))")
+//
+//
+///*다트 게임*/
+//
+//func solution2(_ dartResult:String) -> Int {
+//    let dart = Array(dartResult)
+//    var temp = [Int]()
+//
+//    for i in 0 ..< dart.count {
+//        var str = ""
+//        if i-1 >= 0 { str = String(dart[i-1]) }
+//
+//        if i-2 >= 0
+//        && String(dart[i-1]).rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) == nil
+//        && String(dart[i-2]).rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) == nil {
+//            str = String(dart[i-2]) + String(dart[i-1])
+//        }
+//
+//        switch dart[i] {
+//        case "S":
+//            temp.append((str as NSString).integerValue)
+//        case "D":
+//            temp.append(Int(pow((str as NSString).doubleValue, 2.0)))
+//        case "T":
+//            temp.append(Int(pow((str as NSString).doubleValue, 3.0)))
+//        case "*":
+//            if temp.endIndex - 2 >= 0 { temp[temp.endIndex - 2] = temp[temp.endIndex - 2] * 2 }
+//            if temp.endIndex - 1 >= 0 { temp[temp.endIndex - 1] = temp[temp.endIndex - 1] * 2 }
+//        case "#":
+//            if temp.endIndex - 1 >= 0 { temp[temp.endIndex - 1] = -1 * temp[temp.endIndex - 1] }
+//
+//        default: break
+//        }
+//    }
+//
+//    return temp.reduce(0){$0 + $1}
+//}
+//
+//print("\(solution2("1D2S#10S"))")
+//
+//
+//func solution3(_ cacheSize:Int, _ cities:[String]) -> Int {
+//    if 30 < cacheSize && cacheSize < 0 { return -1 }
+//
+//    var timer = 0
+//    var stack = [String]()
+//
+//    func appendStack(_ city: String){
+//        stack.append(city)
+//        if stack.count > cacheSize { stack.remove(at: 0) }
+//    }
+//
+//    func getStack(_ city: String){
+//        guard let index = stack.firstIndex(of: city) else { return }
+//        stack.remove(at: index)
+//        appendStack(city)
+//    }
+//
+//    for city in cities.map({ $0.uppercased() }) {
+//        if stack.contains(city) {
+//            getStack(city)
+//            timer += 1
+//        }
+//        else {
+//            appendStack(city)
+//            timer += 5
+//        }
+//    }
+//
+//    return timer
+//}
+//
+//print("\(solution3(0, ["Jeju", "Pangyo", "Seoul", "NewYork", "LA"]))")
 
-/*비밀지도
- 네오는 평소 프로도가 비상금을 숨겨놓는 장소를 알려줄 비밀지도를 손에 넣었다. 그런데 이 비밀지도는 숫자로 암호화되어 있어 위치를 확인하기 위해서는 암호를 해독해야 한다. 다행히 지도 암호를 해독할 방법을 적어놓은 메모도 함께 발견했다.
- 
- 지도는 한 변의 길이가 n인 정사각형 배열 형태로, 각 칸은 공백(" ) 또는벽(#") 두 종류로 이루어져 있다.
- 전체 지도는 두 장의 지도를 겹쳐서 얻을 수 있다. 각각 지도 1과 지도 2라고 하자. 지도 1 또는 지도 2 중 어느 하나라도 벽인 부분은 전체 지도에서도 벽이다. 지도 1과 지도 2에서 모두 공백인 부분은 전체 지도에서도 공백이다.
- 지도 1과 지도 2는 각각 정수 배열로 암호화되어 있다.
- 암호화된 배열은 지도의 각 가로줄에서 벽 부분을 1, 공백 부분을 0으로 부호화했을 때 얻어지는 이진수에 해당하는 값의 배열이다.
- secret map
- 
- 네오가 프로도의 비상금을 손에 넣을 수 있도록, 비밀지도의 암호를 해독하는 작업을 도와줄 프로그램을 작성하라.
- 
- 입력 형식
- 입력으로 지도의 한 변 크기 n 과 2개의 정수 배열 arr1, arr2가 들어온다.
- 
- 1 ≦ n ≦ 16
- arr1, arr2는 길이 n인 정수 배열로 주어진다.
- 정수 배열의 각 원소 x를 이진수로 변환했을 때의 길이는 n 이하이다. 즉, 0 ≦ x ≦ 2n - 1을 만족한다.
- 출력 형식
- 원래의 비밀지도를 해독하여 '#', 공백으로 구성된 문자열 배열로 출력하라.
- */
+// 기본점수 - 해당 웹페이지의 텍스트 중, 검색어가 등장하는 횟수이다. (대소문자 무시)
+// 외부 링크 수 - 해당 웹페이지에서 다른 외부 페이지로 연결된 링크의 개수이다.
+// 매칭점수 -  해당 웹페이지로 링크가 걸린 다른 웹페이지의 기본점수 ÷ 외부 링크 수의 총합이다. 한 웹페이지의 매칭점수는 기본점수와 링크점수의 합으로 계산한다.
+// => 매칭점수가 가장 높은 웹페이지의 index를 구하라. 만약 그런 웹페이지가 여러 개라면 그중 번호가 가장 작은 것을 구하라.
 
-func solution(_ n: Int, _ arr1: [Int], _ arr2: [Int]) -> [String] {
-    var answer: [String] = []
-    
-    for i in 0 ..< n {
-        var val = String((arr1[i] | arr2[i]), radix: 2)
-        
-        val = val.replacingOccurrences(of: "0", with: " ", options: .literal, range: nil)
-        val = val.replacingOccurrences(of: "1", with: "#", options: .literal, range: nil)
-        
-        for _ in 0 ..< (n - val.count) {
-            val = " " + val
+// pages는 HTML 형식의 웹페이지가 문자열 형태로 들어있는 배열이고, 길이는 1 이상 20 이하이다.
+// 한 웹페이지 문자열의 길이는 1 이상 1,500 이하이다.
+// 웹페이지의 index는 pages 배열의 index와 같으며 0부터 시작한다.
+// 한 웹페이지의 url은 HTML의 <head> 태그 내에 <meta> 태그의 값으로 주어진다. 예를들어, 아래와 같은 meta tag가 있으면 이 웹페이지의 url은 https://careers.kakao.com/index 이다. <meta property=og:url content=https://careers.kakao.com/index />
+// 한 웹페이지에서 모든 외부 링크는 <a href=https://careers.kakao.com/index>의 형태를 가진다. <a> 내에 다른 attribute가 주어지는 경우는 없으며 항상 href로 연결할 사이트의 url만 포함된다. 위의 경우에서 해당 웹페이지는 https://careers.kakao.com/index 로 외부링크를 가지고 있다고 볼 수 있다.
+// 모든 url은 https:// 로만 시작한다.
+// 검색어 word는 하나의 영어 단어로만 주어지며 알파벳 소문자와 대문자로만 이루어져 있다.
+// word의 길이는 1 이상 12 이하이다.
+// 검색어를 찾을 때, 대소문자 구분은 무시하고 찾는다.
+// 검색어는 단어 단위로 비교하며, 단어와 완전히 일치하는 경우에만 기본 점수에 반영한다.
+// 단어는 알파벳을 제외한 다른 모든 문자로 구분한다.
+// 예를들어 검색어가 aba 일 때, abab abababa는 단어 단위로 일치하는게 없으니, 기본 점수는 0점이 된다.
+// 만약 검색어가 aba 라면, aba@aba aba는 단어 단위로 세개가 일치하므로, 기본 점수는 3점이다.
+// 결과를 돌려줄때, 동일한 매칭점수를 가진 웹페이지가 여러 개라면 그중 index 번호가 가장 작은 것를 리턴한다
+// 즉, 웹페이지가 세개이고, 각각 매칭점수가 3,1,3 이라면 제일 적은 index 번호인 0을 리턴하면 된다.
+
+struct PageInfo {
+    var myLink: String?
+    var basicScore: Int = 0
+    var otherLink: [String]?
+    var linkScore: Int = 0 {
+        get {
+            return self.otherLink?.count
         }
-        
-        answer.append(val)
     }
-    
-    return answer
 }
 
-print("\(solution(5, [9, 20, 28, 18, 11], [30, 1, 21, 17, 28]))")
-
-
-/*다트 게임
- 카카오톡에 뜬 네 번째 별! 심심할 땐? 카카오톡 게임별~
- 
- Game Star
- 
- 카카오톡 게임별의 하반기 신규 서비스로 다트 게임을 출시하기로 했다. 다트 게임은 다트판에 다트를 세 차례 던져 그 점수의 합계로 실력을 겨루는 게임으로, 모두가 간단히 즐길 수 있다.
- 갓 입사한 무지는 코딩 실력을 인정받아 게임의 핵심 부분인 점수 계산 로직을 맡게 되었다. 다트 게임의 점수 계산 로직은 아래와 같다.
- 
- 다트 게임은 총 3번의 기회로 구성된다.
- 각 기회마다 얻을 수 있는 점수는 0점에서 10점까지이다.
- 점수와 함께 Single(S), Double(D), Triple(T) 영역이 존재하고 각 영역 당첨 시 점수에서 1제곱, 2제곱, 3제곱 (점수1 , 점수2 , 점수3 )으로 계산된다.
- 옵션으로 스타상(*) , 아차상(#)이 존재하며 스타상(*) 당첨 시 해당 점수와 바로 전에 얻은 점수를 각 2배로 만든다. 아차상(#) 당첨 시 해당 점수는 마이너스된다.
- 스타상(*)은 첫 번째 기회에서도 나올 수 있다. 이 경우 첫 번째 스타상(*)의 점수만 2배가 된다. (예제 4번 참고)
- 스타상(*)의 효과는 다른 스타상(*)의 효과와 중첩될 수 있다. 이 경우 중첩된 스타상(*) 점수는 4배가 된다. (예제 4번 참고)
- 스타상(*)의 효과는 아차상(#)의 효과와 중첩될 수 있다. 이 경우 중첩된 아차상(#)의 점수는 -2배가 된다. (예제 5번 참고)
- Single(S), Double(D), Triple(T)은 점수마다 하나씩 존재한다.
- 스타상(*), 아차상(#)은 점수마다 둘 중 하나만 존재할 수 있으며, 존재하지 않을 수도 있다.
- 0~10의 정수와 문자 S, D, T, *, #로 구성된 문자열이 입력될 시 총점수를 반환하는 함수를 작성하라.
- 
- 입력 형식
- 점수|보너스|[옵션]으로 이루어진 문자열 3세트.
- 예) 1S2D*3T
- 
- 점수는 0에서 10 사이의 정수이다.
- 보너스는 S, D, T 중 하나이다.
- 옵선은 *이나 # 중 하나이며, 없을 수도 있다.
- 출력 형식
- 3번의 기회에서 얻은 점수 합계에 해당하는 정수값을 출력한다.
- 예) 37*/
-
-func solution2(_ dartResult:String) -> Int {
-    let dart = Array(dartResult)
-    var temp = [Int]()
+func solution4(_ word:String, _ pages:[String]) -> Int {
+    var pageInfos = [PageInfo]()
     
-    for i in 0 ..< dart.count {
-        var str = ""
-        if i-1 >= 0 { str = String(dart[i-1]) }
+    let url = #"(https://(\w*:\w*@)?[-\w.]+(:\d+)?(/([\w/_.]*(\?\S+)?)?)?)"#
+    let myLinkEx = #"<meta property="og:url" content="\b"#+url+#"\b[^>]*>(.*?)"#
+    let pattern = #"([^{A-Za-z\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\xFF}]|^)"#+word+#"([^{A-Za-z\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\xFF}]|$)"#
+    let aTag = #"<a href=\"\b"#+url+#"\b[^>]*>(.*?)</a>"#
+    
+    func splitTag(_ pageWord: [String.SubSequence], _ startExpress: String, _ endExpress: String) -> Array<String.SubSequence> {
+        let start = pageWord.filter { String($0).matchingExpression(startExpress) }.map{"\($0)"}.reduce(""){$0+$1}
+        let end = pageWord.filter { String($0).matchingExpression(endExpress) }.map{"\($0)"}.reduce(""){$0+$1}
+        let startIndex = (pageWord.firstIndex(of: Substring(start)) ?? 0) + 1
+        let endIndex = (pageWord.lastIndex(of: Substring(end)) ?? 0)
+        return Array(pageWord[startIndex ..< endIndex])
+    }
+    
+    func getMatchScore() -> [Int] {
+        var score = [Int]()
         
-        if i-2 >= 0
-        && String(dart[i-1]).rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) == nil
-        && String(dart[i-2]).rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) == nil {
-            str = String(dart[i-2]) + String(dart[i-1])
+        for i in 0 ..< pageInfos.count {
+            if pageInfos[i].linkScore <= 0 {
+                score.append(0)
+            }
+            pageInfos[i].otherLink.map{  }
         }
         
-        switch dart[i] {
-        case "S":
-            temp.append((str as NSString).integerValue)
-        case "D":
-            temp.append(Int(pow((str as NSString).doubleValue, 2.0)))
-        case "T":
-            temp.append(Int(pow((str as NSString).doubleValue, 3.0)))
-        case "*":
-            if temp.endIndex - 2 >= 0 { temp[temp.endIndex - 2] = temp[temp.endIndex - 2] * 2 }
-            if temp.endIndex - 1 >= 0 { temp[temp.endIndex - 1] = temp[temp.endIndex - 1] * 2 }
-        case "#":
-            if temp.endIndex - 1 >= 0 { temp[temp.endIndex - 1] = -1 * temp[temp.endIndex - 1] }
-            
-        default: break
-        }
+        return score
     }
     
-    return temp.reduce(0){$0 + $1}
+    for page in pages {
+        let pageWord = page.split(separator: "\n")
+        
+        let head = splitTag(pageWord, #"<head>"#, #"</head>"#)
+        let myLink = head.filter { String($0).matchingExpression(myLinkEx) }
+            .map { String($0).split(separator: "\"")
+            .filter { String($0).matchingExpression(url) }.reduce(""){$0+$1} }
+            .reduce(""){$0+$1}
+        
+        let body = splitTag(pageWord, #"<body>"#, #"</body>"#)
+        let basicScore = body.map { String($0).split(separator: " ").filter { String($0).matchingExpression(pattern)}.count }.reduce(0){ $0 + $1 }
+        let link = body.filter { String($0).matchingExpression(aTag) }
+            .map { String($0).split(separator: "\"")
+            .filter { String($0).matchingExpression(url) }.reduce(""){$0+$1} }
+        
+        pageInfos.append(PageInfo(myLink: myLink, basicScore: basicScore, otherLink: link))
+        
+        print("\(word)\n\(body)\n => basicScore : \(basicScore)  linkNum : \(link.count)\n")
+    }
+    
+    let matchScore = getMatchScore()
+    
+    print("=> matchScore : \(matchScore)) = index : \(matchScore.firstIndex(of: matchScore.max() ?? matchScore[0]) ?? -1) \n")
+    
+    return matchScore.firstIndex(of: matchScore.max() ?? matchScore[0]) ?? -1
 }
 
-print("\(solution2("1D2S#10S"))")
-
-
-func solution3(_ cacheSize:Int, _ cities:[String]) -> Int {
-    if 30 < cacheSize && cacheSize < 0 { return -1 }
-    
-    var timer = 0
-    var stack = [String]()
-    
-    func appendStack(_ city: String){
-        stack.append(city)
-        if stack.count > cacheSize { stack.remove(at: 0) }
-    }
-    
-    func getStack(_ city: String){
-        guard let index = stack.firstIndex(of: city) else { return }
-        stack.remove(at: index)
-        appendStack(city)
-    }
-    
-    for city in cities.map({ $0.uppercased() }) {
-        if stack.contains(city) {
-            getStack(city)
-            timer += 1
+extension String {
+    func matchingExpression(_ regularExpression: String) -> Bool {
+        do {
+            let regex = try NSRegularExpression(pattern: regularExpression , options: .caseInsensitive)
+            if let _ = regex.firstMatch(in: self, options: NSRegularExpression.MatchingOptions.reportCompletion, range: NSMakeRange(0, self.count)) {
+                return true
+            }
+        }catch{
+            print(error.localizedDescription)
+            return false
         }
-        else {
-            appendStack(city)
-            timer += 5
-        }
+        return false
     }
-    
-    return timer
 }
 
-print("\(solution3(0, ["Jeju", "Pangyo", "Seoul", "NewYork", "LA"]))")
+print("\(solution4("Muzi", ["<html lang=\"ko\" xml:lang=\"ko\" xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta property=\"og:url\" content=\"https://careers.kakao.com/interview/list\"/>\n</head>  \n<body>\n<a href=\"https://programmers.co.kr/learn/courses/4673\"></a>#!MuziMuzi!)jayg07con&&\n\n</body>\n</html>", "<html lang=\"ko\" xml:lang=\"ko\" xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta property=\"og:url\" content=\"https://www.kakaocorp.com\"/>\n</head>  \n<body>\ncon%\tmuzI92apeach&2<a href=\"https://hashcode.co.kr/tos\"></a>\n\n\t^\n</body>\n</html>"]))")
