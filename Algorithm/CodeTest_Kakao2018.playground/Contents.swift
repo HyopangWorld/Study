@@ -86,25 +86,19 @@ func solution2(_ dartResult:String) -> Int {
         && String(dart[i-2]).rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) == nil {
             str = String(dart[i-2]) + String(dart[i-1])
         }
-        print("\(str)")
         
         switch dart[i] {
         case "S":
             temp.append((str as NSString).integerValue)
-            print("S \(temp)")
         case "D":
             temp.append(Int(pow((str as NSString).doubleValue, 2.0)))
-            print("D \(temp)")
         case "T":
             temp.append(Int(pow((str as NSString).doubleValue, 3.0)))
-            print("T \(temp)")
         case "*":
             if temp.endIndex - 2 >= 0 { temp[temp.endIndex - 2] = temp[temp.endIndex - 2] * 2 }
             if temp.endIndex - 1 >= 0 { temp[temp.endIndex - 1] = temp[temp.endIndex - 1] * 2 }
-            print("* \(temp)")
         case "#":
             if temp.endIndex - 1 >= 0 { temp[temp.endIndex - 1] = -1 * temp[temp.endIndex - 1] }
-            print("# \(temp)")
             
         default: break
         }
@@ -114,3 +108,37 @@ func solution2(_ dartResult:String) -> Int {
 }
 
 print("\(solution2("1D2S#10S"))")
+
+
+func solution3(_ cacheSize:Int, _ cities:[String]) -> Int {
+    if 30 < cacheSize && cacheSize < 0 { return -1 }
+    
+    var timer = 0
+    var stack = [String]()
+    
+    func appendStack(_ city: String){
+        stack.append(city)
+        if stack.count > cacheSize { stack.remove(at: 0) }
+    }
+    
+    func getStack(_ city: String){
+        guard let index = stack.firstIndex(of: city) else { return }
+        stack.remove(at: index)
+        appendStack(city)
+    }
+    
+    for city in cities.map({ $0.uppercased() }) {
+        if stack.contains(city) {
+            getStack(city)
+            timer += 1
+        }
+        else {
+            appendStack(city)
+            timer += 5
+        }
+    }
+    
+    return timer
+}
+
+print("\(solution3(0, ["Jeju", "Pangyo", "Seoul", "NewYork", "LA"]))")
