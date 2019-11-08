@@ -213,35 +213,49 @@ import Foundation
 //
 //print("\(solution4("Muzi", ["<html lang=\"ko\" xml:lang=\"ko\" xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta property=\"og:url\" content=\"https://careers.kakao.com/interview/list\"/>\n</head>  \n<body>\n<a href=\"https://programmers.co.kr/learn/courses/4673\"></a>#!MuziMuzi!)jayg07con&&\n\n</body>\n</html>", "<html lang=\"ko\" xml:lang=\"ko\" xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta property=\"og:url\" content=\"https://www.kakaocorp.com\"/>\n</head>  \n<body>\ncon%\tmuzI92apeach&2<a href=\"https://hashcode.co.kr/tos\"></a>\n\n\t^\n</body>\n</html>"]))")
 
-func solution5(_ record:[String]) -> [String] {
-    var nameList = [String:String]()
-    var history = [String]()
-    
-    for item in record {
-        let array = item.split(separator: " ")
-        let (action, id) = ("\(array[0])", "\(array[1])")
-        
-        if action == "Enter" || action == "Change" {
-            nameList.updateValue("\(array[2])", forKey: id)
-        }
+//func solution5(_ record:[String]) -> [String] {
+//    var nameList = [String:String]()
+//    var history = [String]()
+//
+//    for item in record {
+//        let array = item.split(separator: " ")
+//        let (action, id) = ("\(array[0])", "\(array[1])")
+//
+//        if action == "Enter" || action == "Change" {
+//            nameList.updateValue("\(array[2])", forKey: id)
+//        }
+//    }
+//
+//    for item in record {
+//        let array = item.split(separator: " ")
+//        let (action, id) = ("\(array[0])", "\(array[1])")
+//
+//        switch action {
+//        case "Enter" :
+//            history.append("\(nameList[id] ?? "\(array[2])")님이 들어왔습니다.")
+//        case "Leave" :
+//            history.append("\(nameList[id] ?? "\(array[2])")님이 나갔습니다.")
+//        default : continue
+//        }
+//    }
+//
+//    return history
+//}
+
+//print("\(solution5(["Enter uid1234 Muzi", "Enter uid4567 Prodo","Leave uid1234","Enter uid1234 Prodo","Change uid4567 Ryan"]))")
+
+func solution6(_ N:Int, _ stages:[Int]) -> [Int] {
+    let stage = Array<Int>(1...N)
+    var failArray = [Double]()
+
+    for i in 1...N {
+        let havin = stages.filter { i <= $0 }
+        failArray.append(Double(havin.filter { i == $0 }.count) / Double(havin.filter { i < $0 }.count))
     }
-    
-    for item in record {
-        let array = item.split(separator: " ")
-        let (action, id) = ("\(array[0])", "\(array[1])")
-        
-        switch action {
-        case "Enter" :
-            history.append("\(nameList[id] ?? "\(array[2])")님이 들어왔습니다.")
-        case "Leave" :
-            history.append("\(nameList[id] ?? "\(array[2])")님이 나갔습니다.")
-        default : continue
-        }
-    }
-    
-    return history
+    failArray += Array([Double](repeating: 0.0, count: N - ((stages.max() ?? N) - 1)))
+
+    return stage.sorted{ failArray[($0-1)] > failArray[($1-1)] }
 }
 
-print("\(solution5(["Enter uid1234 Muzi", "Enter uid4567 Prodo","Leave uid1234","Enter uid1234 Prodo","Change uid4567 Ryan"]))")
-
+print("\(solution6(5, [3, 5, 5, 5, 6, 4, 3, 3]))")
 
