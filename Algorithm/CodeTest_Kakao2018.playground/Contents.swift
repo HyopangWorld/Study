@@ -295,26 +295,10 @@ func solution7(_ words:[String], _ queries:[String]) -> [Int] {
 }
 
 
-extension String {
-    func matchingExpression(_ regularExpression: String) -> Bool {
-        do {
-            let regex = try NSRegularExpression(pattern: regularExpression , options: .caseInsensitive)
-            if let _ = regex.firstMatch(in: self, options: NSRegularExpression.MatchingOptions.reportCompletion, range: NSMakeRange(0, self.count)) {
-                return true
-            }
-        }catch{
-            print(error.localizedDescription)
-            return false
-        }
-        return false
-    }
-}
-
-
 print("\(solution7(["frodo", "front", "frost", "frozen", "frame", "kakao"], ["fro??", "????o", "fr???", "fro???", "pro?", "fro??", "f?ro??"]))")
 
 
-func solution1(_ board:[[Int]], _ moves:[Int]) -> Int {
+func kakao_solution1(_ board:[[Int]], _ moves:[Int]) -> Int {
     var boards = board
     var stack = [Int]()
     var cnt = 0
@@ -342,11 +326,11 @@ func solution1(_ board:[[Int]], _ moves:[Int]) -> Int {
     return cnt
 }
 
-print("\(solution1([[0,0,0,0,0],[1,0,3,0,3],[0,2,5,0,1],[4,2,4,4,2],[3,5,1,3,1]], [1,5,3,5,1,2,1,4,5]))")
+print("\(kakao_solution1([[0,0,0,0,0],[1,0,3,0,3],[0,2,5,0,1],[4,2,4,4,2],[3,5,1,3,1]], [1,5,3,5,1,2,1,4,5]))")
 
 
 
-func solution2(_ s:String) -> [Int] {
+func kakao_solution2(_ s:String) -> [Int] {
     var arr = Array(s)
     arr.remove(at: 0)
     arr.remove(at: arr.endIndex - 1)
@@ -383,11 +367,11 @@ func solution2(_ s:String) -> [Int] {
     return result
 }
 
-print("\(solution2("{{4,2,3},{3},{2,3,4,1},{2,3}}"))")
+print("\(kakao_solution2("{{4,2,3},{3},{2,3,4,1},{2,3}}"))")
 
 
 
-func solution3(_ user_id:[String], _ banned_id:[String]) -> Int {
+func kakao_solution3(_ user_id:[String], _ banned_id:[String]) -> Int {
     let banneds = Array(Set(banned_id))
     var warnList = [Warn]()
     var result = [Int]()
@@ -408,12 +392,8 @@ func solution3(_ user_id:[String], _ banned_id:[String]) -> Int {
     for warn in warnList {
         let r = warn.cnt
         let n = warn.id.count
-
-//        if(n == r || r == 0){ result.append(1) }
-//        else { result.append(n / (r * (n - r))) }
-        arr
-        combination(&arr, index, n, r, target + 1)
-        result.append(arr.count)
+        if(n == r || r == 0){ result.append(1) }
+        else { result.append(n / (r * (n - r))) }
     }
 
     return result.reduce(1){$0 * $1}
@@ -424,37 +404,12 @@ struct Warn {
     var cnt: Int
 }
 
-func combination(arr: inout [Int], index: Int, n: Int, r: Int, target: Int) {
-    if (r == 0){ print(arr, index) }
-    else if (target == n){ return }
-    else {
-        arr[index] = target
-        combination(&arr, index + 1, n, r - 1, target + 1)
-        combination(&arr, index, n, r, target + 1)
-    }
-}
 
-
-extension String {
-    func matchingExpression(_ regularExpression: String) -> Bool {
-        do {
-            let regex = try NSRegularExpression(pattern: regularExpression , options: .caseInsensitive)
-            if let _ = regex.firstMatch(in: self, options: NSRegularExpression.MatchingOptions.reportCompletion, range: NSMakeRange(0, self.count)) {
-                return true
-            }
-        }catch{
-            print(error.localizedDescription)
-            return false
-        }
-        return false
-    }
-}
-
-print("\(solution3(["frodo", "fradi", "crodo", "abc123", "frodoc"], ["fr*d*", "*rodo", "******", "******"]))")
+print("\(kakao_solution3(["frodo", "fradi", "crodo", "abc123", "frodoc"], ["fr*d*", "*rodo", "******", "******"]))")
 
 
 
-func solution4(_ k:Int64, _ room_number:[Int64]) -> [Int64] {
+func kakao_solution4(_ k:Int64, _ room_number:[Int64]) -> [Int64] {
     var result = [Int64]()
 
     for number in room_number {
@@ -475,11 +430,11 @@ func solution4(_ k:Int64, _ room_number:[Int64]) -> [Int64] {
     return result
 }
 
-print("\(solution4(10, [1,3,4,1,3,1]))")
+print("\(kakao_solution4(10, [1,3,4,1,3,1]))")
 
 
 
-func solution5(_ stones:[Int], _ k:Int) -> Int {
+func kakao_solution5(_ stones:[Int], _ k:Int) -> Int {
     var jinggum = stones.map { $0 - (stones.min() ?? 0) }
     var ninies = stones.min() ?? 0
     
@@ -503,4 +458,4 @@ func solution5(_ stones:[Int], _ k:Int) -> Int {
     return ninies
 }
 
-print("\(solution5([2, 4, 5, 3, 2, 1, 4, 2, 5, 1], 3))")
+print("\(kakao_solution5([2, 4, 5, 3, 2, 1, 4, 2, 5, 1], 3))")
