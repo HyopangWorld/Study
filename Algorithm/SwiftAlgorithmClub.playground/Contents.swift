@@ -104,38 +104,45 @@ extension String {
  */
 
 struct FileName {
-    let pattern = "([0-9])"
+    enum Pattern: String {
+        case number = "([0-9])"
+        case word = #"\D"#
+    }
     
-    var head: String
-    var number: Int
+    var file: String
+    var header: String {
+        let words = file.matchingReplace(Pattern.number.rawValue, with: "*").split(separator: "*")
+        return String(words[0])
+    }
+    var number: Int {
+        let numbers = file.matchingReplace(Pattern.word.rawValue, with: "*").split(separator: "*")
+        return Int(String(numbers[0])) ?? 0
+    }
     
     init(file: String){
-        let body = Array(file.lowercased().matchingReplace(pattern, with: "*"))
-        self.head = String(body.split(separator: "*")[0])
-        print("\(body.split(separator: "*"))")
-        
-        let arr = Array(file.lowercased())
-        let numberStr = String(arr[(body.firstIndex(of: "*") ?? 0)...(body.lastIndex(of: "*") ?? 0)])
-        self.number = Int(numberStr) ?? 0
+        self.file = file
     }
+    
 }
 
 func solution(_ files:[String]) -> [String] {
-    return files.sorted(by: {
-            if $0 == $1 { return false }
-            
-            let curr = FileName(file: $0)
-            let next = FileName(file: $1)
-            
-            if curr.head < next.head { return true }
-            else if curr.number < next.number { return true }
-            else { return false }
-    })
+    let fileNames = files.map { FileName(file: $0) }
     
+    return fileNames.sorted(by: {
+        if $0.file == $1.file { return false }
+        
+        if $0.header.lowercased() < $1.header.lowercased() { return true }
+        
+        if $0.header.lowercased() == $1.header.lowercased()
+            && $0.number < $1.number { return true }
+        
+        return false
+    }).map { $0.file }
 }
 
-
-print("\(solution(["img12.png", "img10.png0909", "img02.png", "img1.png", "IMG01.GIF", "img2.JPG"]))")
+//print("\(solution(["img12.png", "img10.png0909", "img02.png", "img1.png", "IMG01.GIF", "img2.JPG"]))")
 //print("\(solution(["F-5 Freedom Fighter", "B-50 Superfortress", "A-10 Thunderbolt II", "F-14 Tomcat"]))")
-//
 //print("\(solution(["muzi1.zip", "MUZI01.png"]))")
+
+
+print("\(solution(["A0fghth00", "B 50 Superf456 ortress4654", "A 10 Thunderb4564olt II", "F 14 Tomc4at"]))")
