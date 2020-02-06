@@ -1,0 +1,6 @@
+framework module Pods_Patterns_PatternsUITests {
+  umbrella header "Pods-Patterns-PatternsUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

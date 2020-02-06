@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // MVC
-        let mvc = MVCViewController()
+        _ = MVCViewController()
         
         // MVP
         let mvp = MVPViewController()
@@ -33,4 +33,3 @@ class ViewController: UIViewController {
         present(slider, animated: true, completion: nil)
     }
 }
-
