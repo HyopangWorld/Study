@@ -41,6 +41,7 @@ final class RootBuilder: Builder<RootDependency>, RootBuildable {
     func build() -> LaunchRouting {
         let component = RootComponent(dependency: dependency)
         let viewController = RootViewController()
+        viewController.modalPresentationStyle = .overFullScreen
         let interactor = RootInteractor(presenter: viewController)
 
         let loggedOutBuilder = LoggedOutBuilder(dependency: component)
