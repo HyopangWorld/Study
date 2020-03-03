@@ -31,7 +31,6 @@ protocol RootListener: class {
 }
 
 final class RootInteractor: PresentableInteractor<RootPresentable>, RootInteractable, RootPresentableListener {
-
     weak var router: RootRouting?
 
     weak var listener: RootListener?
@@ -54,4 +53,8 @@ final class RootInteractor: PresentableInteractor<RootPresentable>, RootInteract
     }
 
     // MARK: - LoggedOutListener
+    
+    func didLogin(withPlayer1Name player1Name: String, player2Name: String) {
+        router?.routeToLoggedIn(withPlayer1Name: player1Name, player2Name: player2Name)
+    }
 }
