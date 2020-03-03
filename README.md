@@ -1,23 +1,19 @@
 # Study
 
-### Notes
-
-- [Computer Science](https://github.com/HyopangWorld/Study/Notes/CS.md)
-- [iOS](https://github.com/HyopangWorld/Study/Notes/iOS.md)
-- [Design Pattern](https://github.com/HyopangWorld/Study/Notes/DesignPattern.md)
-- [Development Sense](https://github.com/HyopangWorld/Study/Notes/Development_common_sense.md)
-
+## Notes
+- [Computer Science](https://github.com/HyopangWorld/Study/blob/master/Notes/CS.md)
+- [iOS](https://github.com/HyopangWorld/Study/blob/master/Notes/iOS.md)
+- [Design Pattern](https://github.com/HyopangWorld/Study/blob/master/NotesDesignPattern.md)
+- [Development Sense](https://github.com/HyopangWorld/Study/blob/master/Notes/Development_common_sense.md)
 
 
-### Patterns
-
+## Patterns
 - MVC
 - MVVM
 - MVP
 - RIBs
 
 
-
-### SwiftUI
+## SwiftUI
 
 ᐩ Combine...✨ 

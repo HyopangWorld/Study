@@ -11,57 +11,31 @@
 7. [Etc Pattern]()
 
 
-
-### Singlethone Pattern
-
+## Singlethone Pattern
  (Creational category)
 
 
-
-
-
-### Observer Pattern
-
+## Observer Pattern
 (Behavioral category)
 
 
-
-
-
-### MVC Pattern
-
+## MVC Pattern
 (Structural category)
 
 
-
-
-
-### MVVP Pattern
-
+## MVVP Pattern
 (Structural category)
 
 
-
-
-
-### MVVM Pattern
-
+## MVVM Pattern
 (Structural category)
 
 
-
-
-
-### RIBs Pattern
-
+## RIBs Pattern
 (Structural category)
 
 
-
-
-
-### Etc Pattern
-
+## Etc Pattern
 1. Factory Method Pattern (Creational category)
 2. Abstract Factory Pattern (Creational category)
 3. Builder Pattern (Creational category)
