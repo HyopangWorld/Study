@@ -1,4 +1,4 @@
-#DesignPattern
+# DesignPattern
 
   https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/DesignPattern
 
@@ -12,7 +12,7 @@
 
 
 
-###Singlethone Pattern
+### Singlethone Pattern
 
  (Creational category)
 
@@ -20,7 +20,7 @@
 
 
 
-###Observer Pattern
+### Observer Pattern
 
 (Behavioral category)
 
@@ -28,7 +28,7 @@
 
 
 
-###MVC Pattern
+### MVC Pattern
 
 (Structural category)
 
@@ -36,7 +36,7 @@
 
 
 
-###MVVP Pattern
+### MVVP Pattern
 
 (Structural category)
 
@@ -44,7 +44,7 @@
 
 
 
-###MVVM Pattern
+### MVVM Pattern
 
 (Structural category)
 
@@ -52,7 +52,7 @@
 
 
 
-###RIBs Pattern
+### RIBs Pattern
 
 (Structural category)
 

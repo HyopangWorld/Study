@@ -1,4 +1,4 @@
-#CS
+# CS
 
 - index
 
@@ -12,7 +12,7 @@
   
   
 
- ### Algorithm
+ ###  Algorithm
 
   https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Algorithm
 
@@ -22,7 +22,7 @@
 
  
 
- ### DataStructure
+ ###  DataStructure
 
   https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/DataStructure
 
@@ -42,7 +42,7 @@
 
    
 
-   ### Network
+   ###  Network
 
   https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Network
 
@@ -60,7 +60,7 @@
 
    
 
-### OS
+###  OS
 
   https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/OS
 
