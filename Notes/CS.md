@@ -1,15 +1,15 @@
 # Computer Science
+  [Algorithm](https://github.com/HyopangWorld/Study/blob/master/Notes/CS.md#algorithm)
 
-- index
+  [DataStructure](https://github.com/HyopangWorld/Study/blob/master/Notes/CS.md#datastructure)
+  
+  [Network](https://github.com/HyopangWorld/Study/blob/master/Notes/CS.md#network)
+  
+  [OS](https://github.com/HyopangWorld/Study/blob/master/Notes/CS.md#os)
+  
+  [Database](https://github.com/HyopangWorld/Study/blob/master/Notes/CS.md#database)
 
-  [Algorithm]()
-
-  [DataStructure]()
-  
-  [Network]()
-  
-  [Algorithm]()
-  
+<br>
   
 ## Algorithm
   https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Algorithm
@@ -17,6 +17,7 @@
 1. Sorting Algorithm
 2. Prime Number Algorithm
 
+<br>
 
 ## DataStructure
   https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/DataStructure
@@ -28,7 +29,8 @@
 5. Red Black Tree
 6. Hash Table
 7. Graph
-   
+
+<br>
 
 ##  Network
   https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Network
@@ -40,6 +42,7 @@
 5. DNS Round Robin 방식
 6. 웹 통신의 큰 흐름
 
+<br>
    
 ##  OS
   https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/OS
@@ -54,6 +57,7 @@
 8. 가상 메모리
 9. 캐시의 지역성
 
+<br>
 
 ## Database
   https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Database
