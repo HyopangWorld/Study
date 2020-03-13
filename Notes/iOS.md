@@ -22,7 +22,7 @@
 
 : [Life-Cycle](https://velog.io/@cskim/iOS-App-생명주기Life-Cycle)
 
-<img src="/Users/kimhyowon/Desktop/스크린샷 2020-03-10 오후 2.30.52.png" alt="스크린샷 2020-03-10 오후 2.30.52" style="zoom: 33%;" />
+<img src="./Image/appcycle.png" alt="AppCycle" style="zoom: 33%;" />
 
 `UIApplication` :  SingleTone, event Loop를 관리, 중요 이벤트나 app 상태변화 등을 AppDelegate에 전달
 
@@ -41,7 +41,7 @@
 
 - 앱이 foreground에 있을 때와 background에 있을 때 어떤 제약사항이 있고, 상태 변화에 따라 다른 동작을 처리하기 위한 델리게이트 메서드들을 설명하시오.
 
-    <img src="/Users/kimhyowon/Desktop/스크린샷 2020-03-10 오후 2.22.01.png" alt="스크린샷 2020-03-10 오후 2.22.01" style="zoom: 33%;" />
+    <img src="./Image/viewcycle.png" alt="Method" style="zoom: 33%;" />
 
     - background에 있을 때 제약사항
 
@@ -80,7 +80,7 @@
     - applicationDidBecomeActive - 앱이 Active 되었을때
     - applicationWillTerminate - 앱이 종료(Not Running)될때
 
-<img src="/Users/kimhyowon/Desktop/스크린샷 2020-03-10 오후 2.43.30.png" alt="스크린샷 2020-03-10 오후 2.43.30" style="zoom:33%;" />
+<img src="./Image/allcycle.png" alt="Cycle" style="zoom:33%;" />
 
 
 
