@@ -107,7 +107,7 @@ func loadFeedEntries() async throws -> Feed.Entries {
 ```
 
 
-[참고]
+[참고] <br/>
 https://ios-development.tistory.com/589 <br/>
 https://zeddios.tistory.com/1230 <br/>
 https://github.com/apple/swift-evolution/blob/main/proposals/0296-async-await.md#suspension-points <br/>
