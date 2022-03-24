@@ -54,8 +54,9 @@ let imageResource = try await decodeImage(data: dataResource)
 ```
 
 <br/>
+<br/>
 
-* 동시성을 활용하려면? <br/>
+## 동시성을 활용하려면?
 아래처럼 사용할 경우, 순차적으로 실행된다.
 
 <br/>
@@ -80,8 +81,9 @@ func loadFeedEntries() async throws -> Feed.Entries {
 ```
 <br/>
 
-동시성을 활용하려면 아래와 같이 사용한다. <br/>
-await을 결합 부분에만 호출하는 것.
+동시성을 활용하려면 아래와 같이 사용한다. 
+<br/>
+***await을 결합 부분에만 호출하는 것.***
 
 <br/>
 
