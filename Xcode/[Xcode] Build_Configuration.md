@@ -17,7 +17,10 @@ fastlane을 사용하고 있기 때문에 추가한 build configuration으로 �
 해당 Build Configuration에 해당하는 서버 주소나, 기타 설정 값등을 바꿔주기 위해  </br>
 전처리문을 사용하기위한 Flag 설정 </br>
 </br>
-.xcodeproj > builld settings > swift compiler - Custom Flags
+1. .xcodeproj > builld settings > swift compiler - Custom Flags
+2. Apple Clang - Preprocessing 에 해당 빌드시 사용하고 싶은 define 값을 전처리문 타입에 넣어준다.
+</br>
+
 </br>
 Activie Compilation Conditions에 사용할 flag value를 넣어준다.
 
