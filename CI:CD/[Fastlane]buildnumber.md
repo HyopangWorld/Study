@@ -1,4 +1,4 @@
-## Fastlane 버전 정보 가져오기
+## Fastlane 빌드 버전 정보 설정 파일, 테플에서 가져오기
 
 1. .xcodeproj 설정 파일의 version, build 코드 가져오기
 ```
