@@ -24,6 +24,10 @@ fastlane을 사용하고 있기 때문에 추가한 build configuration으로 �
 </br>
 Activie Compilation Conditions에 사용할 flag value를 넣어준다.
 
+### Cocoa Pods을 사용할 경우
+1. Cocoa Pods에 추가한 flag가 어떤 build config를 사용할 건지 적용해준다.
+2. Pods, Pods.lock, .workspace 파일을 삭제 후, pod 재설치를 해준다.
+
 
 [참고]</br>
 https://minsone.github.io/ios/mac/xcode-xcconfig</br>
