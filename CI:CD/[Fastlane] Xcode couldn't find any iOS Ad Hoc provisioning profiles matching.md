@@ -38,3 +38,5 @@ fastlane env 명령어 실행 후 fastlane sigh download_all 실행은 안됨
 
 2. Xcode로 Achive 한거 Ad-hoc으로 말아서 ipa export 한번 해보기 </br>
 이건 문제 없이 잘되는데,,, 혹시나 해서 xcode로 해본 뒤 fastlane으로 시도 </br>
+
+.... 성공..... 다음엔 auto로 ad-hoc 한번 말아주고 fastlane 실행하기,,,
