@@ -12,7 +12,7 @@ https://docs.fastlane.tools/actions/get_provisioning_profile/
 
 
 </br>
-```
+```swift
 fastlane sigh --adhoc
 
 fastlane sigh --development
@@ -22,7 +22,8 @@ fastlane sigh download_all
 </br>
 
 fastlane sigh download_all 이 명령어를 실행시키니 아래와 같은 오류가 발생했고, adhoc에 문제가 있다는 것을 알게되었다.
-```
+
+```swift
 Failure to decode ./AdHoc_.mobileprovision. Exit: 1: security: unable to open "./AdHoc_.mobileprovision" for reading: No such file or directory
 
 
