@@ -13,3 +13,7 @@ No profiles for '{팀명}' were found: Xcode couldn't find any iOS App Developme
 [결론] </br>
 yeogoo.xcodeproj 패키지 안에서 project.pbxroj의 DevelopmentTeam 값을 </br>
 해당 프로젝트를 소유하고 있는 팀 계정의 번호를 입력해주면 된다!
+
+</br></br>
+[참고] </br>
+https://devshin93.tistory.com/123
