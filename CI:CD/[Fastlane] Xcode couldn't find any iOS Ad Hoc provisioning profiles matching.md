@@ -1,5 +1,5 @@
-XCode 업데이트 이후 </br>
-Xcode couldn't find any iOS Ad Hoc provisioning profiles matching 이라는 오류 발생 시 </br>
+iOS 15 버전 반영 및 OS 업뎃을 위해 XCode 13.1 -> 13.3 업데이트 이후 </br>
+Xcode couldn't find any iOS Ad Hoc provisioning profiles matching 이라는 오류 발생 하였다. </br>
 
 provisioning 파일 삭제도 후 재생성도 해보고, 수동으로도 넣어보고 했지만 전부 소용이 없었다,,, </br>
 
