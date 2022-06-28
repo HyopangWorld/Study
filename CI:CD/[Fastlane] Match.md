@@ -1,4 +1,5 @@
 Certification 과 Provisioing 파일을 통합하고 관리하기 위해 클라우드로 내쫓기로 한다.
+<br><br>
 
 처음엔 서버팀에서 사용하는 AWS s3를 사용하려고 buket 생성 후 연결까지는 했으나, 
 
@@ -7,20 +8,23 @@ Certification 과 Provisioing 파일을 통합하고 관리하기 위해 클라�
 이런 오류가 난다,, 대충 fastlane ruby - aws 모듈에 명령어를 찾을 수 없다는 에러였는데,
 
 전부 지웠다가 재설치해도 계속해서 같은 오류가 발생했다.
-
+<br><br>
 
 탈모오기 직전이라 회사 토이프로젝트 시 사용하는 github로 이전,
 > 지금 match로 사용할 수 있는 저장소는 google cloud, s3, github 3가지 이다.
-
+<br>
 너무 잘되서 눈물이 날지경이었다. 암튼 해결 완료 후
 
-1. match nuke 를 통해 기존 certification과 provisiong을 제거해 준다.
-2. match 를 통해 사용할 타입의 provisiong을 생성해 준다. 편의를 위해 force_new_device 옵션 추가
-3. match 동기화와 재생성 편의를 위한 lane도 생성해준다.
-4. 동료들에게 배포해주자.
-5. 꺄르륵
+<br>
+  1. match nuke 를 통해 기존 certification과 provisiong을 제거해 준다.<br>
+  2. match 를 통해 사용할 타입의 provisiong을 생성해 준다. 편의를 위해 force_new_device 옵션 추가<br>
+  3. match 동기화와 재생성 편의를 위한 lane도 생성해준다.<br>
+  4. 동료들에게 배포해주자.<br>
+  5. 꺄르륵<br>
 
+<br>
 
+```
 Debug 배포 시 : signing -> build -> upload to app distribution -> send message to slack
 +------+--------------------------------------------+-------------+
 |                        fastlane summary                         |
@@ -41,3 +45,4 @@ Debug 배포 시 : signing -> build -> upload to app distribution -> send messag
 | 12   | get_build_number                           | 0           |
 | 13   | slack                                      | 0           |
 +------+--------------------------------------------+-------------+
+```
